@@ -24,7 +24,7 @@ router.route('/change-password')
     .post(change_password);
 
 
-// forgot password
+// profile
 router.route('/profile')
     .get(profile);
 

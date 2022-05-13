@@ -4,12 +4,12 @@ const { Schema } = mongoose;
 
 
 const Customers = new Schema({
-    company: { type: String, require: true },
+    company: { type: Array, require: true },
     projectManagers: { type: Array },
     workers: { type: Array },
     isActive: { type: Boolean, default: true },
 }, {
     versionKey: false,
 })
-Orders.plugin(timestamps);
+Customers.plugin(timestamps);
 module.exports = Customers;

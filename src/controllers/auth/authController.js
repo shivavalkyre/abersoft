@@ -126,7 +126,7 @@ exports.login = async (req, res) => {
                     // generate access token
 
                     var accessToken = crypto.randomBytes(32).toString('Hex');
-                    var sign = jwt.sign({ userID, accessToken, email }, process.env.SECRET_KEY, { expiresIn: '30s' });
+                    var sign = jwt.sign({ userID, accessToken, email }, process.env.SECRET_KEY, { expiresIn: '60s' });
 
                     //update to mongo
                     User.findOneAndUpdate({ "email": email }, { "$set": { "accessToken": accessToken } }).exec(function (err, user) {

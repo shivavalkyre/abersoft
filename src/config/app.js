@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json({
     limit: '50mb'
 }));
-app.use('/' + version + user, apiRoute); //ex localhost:3002/api/merchant/get/list/1
+app.use('/' + version + user, apiRoute); 
 app.use((req, res) => {
     res.status(404).json({ success: 0, message: "Page is not found" });
 });
